@@ -2,9 +2,11 @@
 
 
 
-Game::Game()
+Game::Game() 
 {
 	
+
+
 }
 
 
@@ -12,22 +14,40 @@ Game::~Game()
 {
 }
 
-bool Game::init(const char* winTitle)
+void Game::initGlfw()
 {
 	if (!glfwInit())
 	{
 		std::cout << "Error init GLFW .." << std::endl;
-		return false;
+		glfwTerminate();
 	}
+}
+
+void Game::initGlew()
+{
+	glewExperimental = GL_TRUE;
+	GLenum err = glewInit();
+	//Error
+	if (GLEW_OK != err)
+	{
+		/* Problem: glewInit failed, something is seriously wrong. */
+		fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
+
+	}
+}
+
+void Game::init(const char* winTitle)
+{
+	glfwMakeContextCurrent(window);
+	
+	this->initGlfw();
+	
 	this->SCREEN_WIDTH = 1440;
 	this->SCREEN_HEIGHT = 900;
 
 	window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, winTitle,NULL,NULL);
-	if(window == NULL)
-	{
-		std::cout << "Error creating window" << std::endl;
-		return false;
-	}
+	
+
 
 	//OPENGL
 	glfwMakeContextCurrent(this->window);
@@ -40,10 +60,12 @@ bool Game::init(const char* winTitle)
 	int yPos = (mode->height - SCREEN_HEIGHT) / 2;
 	glfwSetWindowPos(this->window,xPos, yPos);
 
+	this->initGlew();
+	
 	glViewport(0, 0, width, height);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glOrtho(0, width, height, 0, -10, 10);
+	//glOrtho(0, width, height, 0, -10, 10);
 	glDepthRange(-10, 10);
 	glMatrixMode(GL_MODELVIEW);
 
@@ -51,20 +73,40 @@ bool Game::init(const char* winTitle)
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	return true;
+
+}
+
+void Game::sceneBuild()
+{
+	this->texture = new GameEngine::Texture();
+	this->texture->loadFromFile("../res/images/tree.png", GL_TEXTURE_2D);
 }
 
 void Game::update()
 {
 		glfwPollEvents();
+		this->deltaTime = currentTime - lastTime;
+		
 }
 
 void Game::render()
 {
-	glClearColor(0,0,0,1);
+	glClearColor(0,0,0,0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	this->texture->bind(GL_TEXTURE_2D,0);
 
 	glfwSwapBuffers(this->window);
+	glFlush();
 }
+ 
+void Game::run()
+{
+	
+	while (!glfwWindowShouldClose(window))
+	{
+		this->update();
+		this->render();
+	}
 
+}

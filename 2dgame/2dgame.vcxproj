@@ -76,11 +76,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\include;C:\Users\cemch\source\repos\2dgame\lib\glew2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\cemch\source\repos\2dgame\lib\soil2\include;C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\include;C:\Users\cemch\source\repos\2dgame\lib\glew2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\x86\lib-vc2017;C:\Users\cemch\source\repos\2dgame\lib\glew2\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\cemch\source\repos\2dgame\lib\soil2\lib;C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\x86\lib-vc2017;C:\Users\cemch\source\repos\2dgame\lib\glew2\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>soil2-debug.lib;glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -89,11 +90,11 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\include;C:\Users\cemch\source\repos\2dgame\lib\glew2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\cemch\source\repos\2dgame\lib\soil2\include;C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\include;C:\Users\cemch\source\repos\2dgame\lib\glew2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\x64\lib-vc2017;C:\Users\cemch\source\repos\2dgame\lib\glew2\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>soil2.lib;glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\cemch\source\repos\2dgame\lib\soil2\lib;C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\x64\lib-vc2017;C:\Users\cemch\source\repos\2dgame\lib\glew2\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -104,13 +105,13 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\include;C:\Users\cemch\source\repos\2dgame\lib\glew2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\cemch\source\repos\2dgame\lib\soil2\include;C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\include;C:\Users\cemch\source\repos\2dgame\lib\glew2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\x86\lib-vc2017;C:\Users\cemch\source\repos\2dgame\lib\glew2\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\cemch\source\repos\2dgame\lib\soil2\lib;C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\x86\lib-vc2017;C:\Users\cemch\source\repos\2dgame\lib\glew2\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>soil2.lib;glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -121,25 +122,35 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\include;C:\Users\cemch\source\repos\2dgame\lib\glew2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\cemch\source\repos\2dgame\lib\soil2\include;C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\include;C:\Users\cemch\source\repos\2dgame\lib\glew2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\x64\lib-vc2017;C:\Users\cemch\source\repos\2dgame\lib\glew2\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>soil2-debug.lib;glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\cemch\source\repos\2dgame\lib\soil2\lib;C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\x64\lib-vc2017;C:\Users\cemch\source\repos\2dgame\lib\glew2\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Graphics\Texture.cpp" />
-    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="EngineSource\Shaders\Shader.cpp" />
+    <ClCompile Include="GameSource\stdafx.cpp" />
+    <ClCompile Include="EngineSource\Renderer\Renderer.cpp" />
+    <ClCompile Include="GameSource\Game.cpp" />
+    <ClCompile Include="GameSource\main.cpp" />
+    <ClCompile Include="EngineSource\Graphics\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Game.h" />
-    <ClInclude Include="src\Graphics\Texture.h" />
-    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="EngineSource\Shaders\Shader.h" />
+    <ClInclude Include="GameSource\stdafx.h" />
+    <ClInclude Include="libs.h" />
+    <ClInclude Include="EngineSource\lib\std_image.h" />
+    <ClInclude Include="EngineSource\Renderer\Renderer.h" />
+    <ClInclude Include="GameSource\Game.h" />
+    <ClInclude Include="EngineSource\Graphics\Texture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GameSource\fragment_core.glsl" />
+    <None Include="GameSource\vertex_core.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
