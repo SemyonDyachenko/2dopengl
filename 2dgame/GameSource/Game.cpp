@@ -2,6 +2,7 @@
 
 
 
+
 Game::Game() 
 {
 	
@@ -12,6 +13,11 @@ Game::Game()
 
 Game::~Game()
 {
+
+	glfwDestroyWindow(this->window);
+	glfwTerminate();
+	delete this->shader;
+	delete this->texture;
 }
 
 void Game::initGlfw()
@@ -38,6 +44,11 @@ void Game::initGlew()
 
 void Game::init(const char* winTitle)
 {
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	glfwWindowHint(4, 4);
+	glfwWindowHint(4, 4);
+	glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
+	
 	glfwMakeContextCurrent(window);
 	
 	this->initGlfw();
@@ -55,49 +66,78 @@ void Game::init(const char* winTitle)
 	glfwGetFramebufferSize(window, &width, &height);
 	glfwSwapInterval(1);
 
-	const GLFWvidmode * mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
-	int xPos = (mode->width - SCREEN_WIDTH) / 2;
-	int yPos = (mode->height - SCREEN_HEIGHT) / 2;
-	glfwSetWindowPos(this->window,xPos, yPos);
 
 	this->initGlew();
 	
-	glViewport(0, 0, width, height);
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	//glOrtho(0, width, height, 0, -10, 10);
-	glDepthRange(-10, 10);
-	glMatrixMode(GL_MODELVIEW);
+	glEnable(GL_DEPTH_TEST);
 
-	glEnable(GL_ALPHA_TEST);
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
+	glFrontFace(GL_CCW);
+
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
+	//Input
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 
 }
 
+
+
 void Game::sceneBuild()
 {
+	char vertex_file[] = "vertex_core.glsl";
+	char fragment_file[] = "fragment_core.glsl";
+	
+	this->shader = new GameEngine::Shader(vertex_file, fragment_file);
+
+
+	this->mesh = new GameEngine::Mesh(&Quad(),glm::vec3(0.f),glm::vec3(0.f),glm::vec3(1.f));
+	
+	
 	this->texture = new GameEngine::Texture();
 	this->texture->loadFromFile("../res/images/tree.png", GL_TEXTURE_2D);
+	
 }
 
 void Game::update()
 {
 		glfwPollEvents();
+		//time
+		this->currentTime = static_cast<float>(glfwGetTime());
 		this->deltaTime = currentTime - lastTime;
+		this->lastTime = currentTime;
 		
 }
 
 void Game::render()
 {
-	glClearColor(0,0,0,0);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClearColor(255.f,0.f,0.f,1.f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+	
+	this->shader->useProgram();
 
+	
+	
 	this->texture->bind(GL_TEXTURE_2D,0);
-
-	glfwSwapBuffers(this->window);
+	
+	this->shader->set1i(0, "texture0");
+	
+	mesh->render(this->shader);
+	
+	// Swap the screen buffers
+	glfwSwapBuffers(window);
+	
 	glFlush();
+	glBindVertexArray(0);
+	glEnableVertexAttribArray(0);
+	glUseProgram(0);
+	glActiveTexture(0);
+	glBindTexture(GL_TEXTURE_2D, 0);
 }
  
 void Game::run()

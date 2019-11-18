@@ -138,19 +138,22 @@
     <ClCompile Include="GameSource\Game.cpp" />
     <ClCompile Include="GameSource\main.cpp" />
     <ClCompile Include="EngineSource\Graphics\Texture.cpp" />
+    <ClCompile Include="EngineSource\Graphics\Mesh.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EngineSource\Graphics\Primitives.h" />
+    <ClInclude Include="EngineSource\Graphics\Vertex.h" />
     <ClInclude Include="EngineSource\Shaders\Shader.h" />
     <ClInclude Include="GameSource\stdafx.h" />
-    <ClInclude Include="libs.h" />
     <ClInclude Include="EngineSource\lib\std_image.h" />
     <ClInclude Include="EngineSource\Renderer\Renderer.h" />
     <ClInclude Include="GameSource\Game.h" />
     <ClInclude Include="EngineSource\Graphics\Texture.h" />
+    <ClInclude Include="EngineSource\Graphics\Mesh.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GameSource\fragment_core.glsl" />
-    <None Include="GameSource\vertex_core.glsl" />
+    <None Include="fragment_core.glsl" />
+    <None Include="vertex_core.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

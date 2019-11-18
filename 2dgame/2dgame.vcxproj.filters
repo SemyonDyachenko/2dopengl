@@ -33,6 +33,9 @@
     <ClCompile Include="GameSource\stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EngineSource\Graphics\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EngineSource\Graphics\Texture.h">
@@ -47,18 +50,24 @@
     <ClInclude Include="EngineSource\lib\std_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="libs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EngineSource\Shaders\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameSource\stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="EngineSource\Graphics\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineSource\Graphics\Primitives.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineSource\Graphics\Vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GameSource\vertex_core.glsl" />
-    <None Include="GameSource\fragment_core.glsl" />
+    <None Include="vertex_core.glsl" />
+    <None Include="fragment_core.glsl" />
   </ItemGroup>
 </Project>

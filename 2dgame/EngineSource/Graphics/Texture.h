@@ -1,5 +1,5 @@
-#ifndef TEXTURE_H
-#define TEXTURE_H
+#ifndef ENGINE_TEXTURE_H
+#define ENGINE_TEXTURE_H
 #include <GL/glew.h>
 #include <iostream>
 #include <GLFW/glfw3.h>
