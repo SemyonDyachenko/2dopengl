@@ -27,7 +27,7 @@ namespace GameEngine
 		GLuint loadShader(GLenum target, char*filename);
 		void linkProgram(GLuint vertexShader, GLuint fragmentShader);
 	public:
-		Shader(/*const int versionMajor, const int versionMinor,*/ char* vertexFile, char* fragmentFile);
+		Shader(char* vertex_file, char* fragment_file);
 
 		virtual ~Shader();
 

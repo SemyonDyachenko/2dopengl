@@ -40,10 +40,8 @@ namespace GameEngine
 		glm::mat4 ModelMatrix;
 
 		
-		void initVertexData(Vertex* vertexArray, const unsigned & number_of_vertices, GLuint * indexArray, const unsigned & number_of_indices);
-
-		void initVAO();
-
+		void initVAO(Vertex* vertexArray, const unsigned& nrOfVertices, GLuint* indexArray, const unsigned& nrOfIndices);
+		
 		void initVAO(Primitive* primitive);
 
 		

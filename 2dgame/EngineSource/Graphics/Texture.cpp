@@ -8,6 +8,7 @@ namespace GameEngine
 	{
 		this->width = 0;
 		this->height = 0;
+		
 	}
 
 	Texture::~Texture()
@@ -17,7 +18,9 @@ namespace GameEngine
 
 	void Texture::loadFromFile(const char* filename,GLenum target)
 	{
-		unsigned char* image = SOIL_load_image(filename, &this->width, &this->height, NULL, SOIL_LOAD_RGBA);
+		int channels = NULL;
+		unsigned char* image = SOIL_load_image(filename, &this->width, &this->height, &channels, SOIL_LOAD_RGBA);
+		
 		glGenTextures(1, &id);
 		glBindTexture(target, id);
 
@@ -28,8 +31,10 @@ namespace GameEngine
 
 		if(image)
 		{
+			
 			glTexImage2D(target, 0, GL_RGBA, this->width, this->height, 0,GL_RGBA, GL_UNSIGNED_BYTE, image);
 			glGenerateMipmap(target);
+			
 		}
 		else
 		{

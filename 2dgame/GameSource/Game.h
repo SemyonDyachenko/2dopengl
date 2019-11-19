@@ -16,6 +16,18 @@ class Game
 {
 private:
 	GLFWwindow* window;
+	int framebufferWidth;
+	int framebufferHeight;
+
+
+	GLuint VAO; // vertex array object
+	GLuint VBO; // vertex buffer object
+	GLuint EBO; // elements buffer object
+
+	unsigned nrOfIndices;
+	
+	int SCREEN_WIDTH;
+	int SCREEN_HEIGHT;
 
 	GameEngine::Texture * texture;
 
@@ -23,25 +35,28 @@ private:
 	
 	GameEngine::Shader * shader;
 	
-	GLuint VAO,VBO,EBO;
 
 	float deltaTime;
 	float currentTime;
 	float lastTime;
+
+
+	void initWindow(const char* winTitle);
+	void initGLFW();
+	void initGLEW();
+	void initOpenGL();
+	void initShaders();
+	void initTextures();
+	void initMeshes();
 public:
 
+
 	
-	 int SCREEN_WIDTH;
-	 int SCREEN_HEIGHT;
-	
-	Game();
+	Game(const char* winTitle);
+
+
 	~Game();
 
-	void initGlfw();
-	void initGlew();
-	void init(const char* winTitle);
-
-	void sceneBuild();
 	
 	void update();
 	void render();

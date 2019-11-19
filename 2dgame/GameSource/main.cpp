@@ -359,9 +359,7 @@
 
 int main(int argc,char**argv)
 {
-	Game game;
-	game.init("From The Darkness of Night");
-	game.sceneBuild();
+	Game game("From The Darkness of Night");
 	game.run();
 
 	return 0;

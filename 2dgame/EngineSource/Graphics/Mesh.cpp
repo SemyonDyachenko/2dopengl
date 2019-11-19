@@ -4,51 +4,46 @@
 namespace GameEngine
 {
 	
-	void Mesh::initVertexData(Vertex* vertexArray, const unsigned& number_of_vertices, GLuint* indexArray,
-		const unsigned& number_of_indices)
+	
+
+
+	void Mesh::initVAO(Vertex* vertexArray, const unsigned& nrOfVertices, GLuint* indexArray,
+		const unsigned& nrOfIndices)
 	{
-		
-		for(size_t i = 0; i < number_of_vertices;i++)
-		{
-			this->vertices.push_back(vertexArray[i]);
-		}
+		this->number_of_vertices = nrOfVertices;
+		this->number_of_indices = nrOfIndices;
 
-		for(size_t i = 0;i < number_of_indices;i++)
-		{
-			this->indices.push_back(indexArray[i]);
-		}
-	}
-
-	void Mesh::initVAO()
-	{
-		glGenVertexArrays(1, &this->VAO);
-		glGenBuffers(1, &this->VBO);
-		glGenBuffers(1, &this->EBO);
-
+		//Create VAO
+		glCreateVertexArrays(1, &this->VAO);
 		glBindVertexArray(this->VAO);
 
+		//GEN VBO AND BIND AND SEND DATA
+		glGenBuffers(1, &this->VBO);
 		glBindBuffer(GL_ARRAY_BUFFER, this->VBO);
-		glBufferData(GL_ARRAY_BUFFER, this->vertices.size() * sizeof(Vertex), this->vertices.data(), GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, this->number_of_vertices * sizeof(Vertex), vertexArray, GL_STATIC_DRAW);
 
+		//GEN EBO AND BIND AND SEND DATA
+		glGenBuffers(1, &this->EBO);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->EBO);
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, this->indices.size() * sizeof(GLuint), this->indices.data(), GL_STATIC_DRAW);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, this->number_of_indices * sizeof(GLuint), indexArray, GL_STATIC_DRAW);
 
-		// Position attribute
+		//SET VERTEXATTRIBPOINTERS AND ENABLE (INPUT ASSEMBLY)
+		//Position
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, position));
 		glEnableVertexAttribArray(0);
-		// Color attribute
+		//Color
 		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, color));
 		glEnableVertexAttribArray(1);
-		// TexCoord attribute
+		//Texcoord
 		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, texcoord));
 		glEnableVertexAttribArray(2);
-
+		//Normal
 		glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, normal));
 		glEnableVertexAttribArray(3);
 
-		glBindVertexArray(0); // Unbind VAO
+		//BIND VAO 0
+		glBindVertexArray(0);
 	}
-
 
 	void Mesh::initVAO(Primitive* primitive)
 	{
@@ -86,6 +81,7 @@ namespace GameEngine
 
 		//BIND VAO 0
 		glBindVertexArray(0);
+		glBindVertexArray(0);
 		
 	}
 
@@ -95,14 +91,6 @@ namespace GameEngine
 		this->position = glm::vec3(0.f);
 		this->rotation = glm::vec3(0.f);
 		this->scale = glm::vec3(1.f);
-
-		
-		this->ModelMatrix = glm::mat4(1.f);
-		this->ModelMatrix = glm::translate(this->ModelMatrix, this->position);
-		this->ModelMatrix = glm::rotate(this->ModelMatrix, glm::radians(this->rotation.x), glm::vec3(1.f, 0.f, 0.f));
-		this->ModelMatrix = glm::rotate(this->ModelMatrix, glm::radians(this->rotation.y), glm::vec3(0.f, 1.f, 0.f));
-		this->ModelMatrix = glm::rotate(this->ModelMatrix, glm::radians(this->rotation.z), glm::vec3(0.f, 0.f, 1.f));
-		this->ModelMatrix = glm::scale(this->ModelMatrix, this->scale);
 		
 	}
 
@@ -116,8 +104,7 @@ namespace GameEngine
 		const unsigned& number_of_indices)
 	{
 
-		this->initVertexData(vertexArray, number_of_vertices, indexArray, number_of_indices);
-		this->initVAO();
+		this->initVAO(vertexArray, number_of_vertices, indexArray, number_of_indices);
 		this->initMatrix();
 	}
 
@@ -142,7 +129,6 @@ namespace GameEngine
 	void Mesh::update()
 	{
 
-		
 	}
 
 
@@ -150,13 +136,12 @@ namespace GameEngine
 	{
 		this->updateUniforms(shader);
 
+		shader->useProgram();
+		
 		glBindVertexArray(this->VAO);
 
 		//render
-		if(indices.empty())
-			glDrawArrays(GL_TRIANGLES, 0, this->vertices.size());
-		else
-			glDrawElements(GL_TRIANGLES, this->indices.size(), GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, this->number_of_indices, GL_UNSIGNED_INT, 0);
 	}
 	
 }

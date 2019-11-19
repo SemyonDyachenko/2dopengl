@@ -2,10 +2,15 @@
 #include <glm/detail/type_vec3.hpp>
 
 
-struct Vertex
+namespace GameEngine
 {
-	glm::vec3 position;
-	glm::vec3 color;
-	glm::vec3 texcoord;
-	glm::vec3 normal;
-};
+
+	struct Vertex
+	{
+		glm::vec3 position;
+		glm::vec3 color;
+		glm::vec2 texcoord;
+		glm::vec3 normal;
+	};
+
+}
