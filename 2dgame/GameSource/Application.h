@@ -1,8 +1,7 @@
-#include <GL/glew.h>
-#include "GLFW/glfw3.h"
+#ifndef GAME_APPLICATION_H
+#define GAME_APPLICATION_H
 
-
-#include <iostream>
+#include "../EngineSource/Renderer/Renderer2D.h"
 
 class Application
 {
@@ -10,6 +9,7 @@ private:
 	//std::stack<State*> states;
 
 	GLFWwindow * window;
+	Engine::Renderer * renderer;
 
 	int WINDOW_WIDTH;
 	int WINDOW_HEIGHT;
@@ -44,3 +44,4 @@ public:
 	void Run();
 };
 
+#endif

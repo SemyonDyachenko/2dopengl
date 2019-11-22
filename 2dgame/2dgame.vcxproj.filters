@@ -21,10 +21,22 @@
     <ClCompile Include="GameSource\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameSource\stdafx.cpp">
+    <ClCompile Include="EngineSource\Console\Console.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EngineSource\Console\Console.cpp">
+    <ClCompile Include="EngineSource\Graphics\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineSource\Renderer\Renderer2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineSource\Shaders\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineSource\Graphics\Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +44,25 @@
     <ClInclude Include="GameSource\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameSource\stdafx.h">
+    <ClInclude Include="EngineSource\Console\Console.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EngineSource\Console\Console.h">
+    <ClInclude Include="EngineSource\Graphics\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineSource\Renderer\Renderer2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineSource\Shaders\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineSource\Graphics\Vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineSource\Graphics\Mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
