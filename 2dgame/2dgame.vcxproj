@@ -18,6 +18,17 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EngineSource\Console\Console.cpp" />
+    <ClCompile Include="GameSource\Application.cpp" />
+    <ClCompile Include="GameSource\stdafx.cpp" />
+    <ClCompile Include="GameSource\tester\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EngineSource\Console\Console.h" />
+    <ClInclude Include="GameSource\Application.h" />
+    <ClInclude Include="GameSource\stdafx.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{A79B0CAB-1ECA-4DF8-817D-EB3C129469D7}</ProjectGuid>
@@ -131,30 +142,6 @@
       <AdditionalLibraryDirectories>C:\Users\cemch\source\repos\2dgame\lib\soil2\lib;C:\Users\cemch\source\repos\2dgame\lib\glm;C:\Users\cemch\source\repos\2dgame\lib\glfw3\x64\lib-vc2017;C:\Users\cemch\source\repos\2dgame\lib\glew2\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="EngineSource\Shaders\Shader.cpp" />
-    <ClCompile Include="GameSource\stdafx.cpp" />
-    <ClCompile Include="EngineSource\Renderer\Renderer.cpp" />
-    <ClCompile Include="GameSource\Game.cpp" />
-    <ClCompile Include="GameSource\main.cpp" />
-    <ClCompile Include="EngineSource\Graphics\Texture.cpp" />
-    <ClCompile Include="EngineSource\Graphics\Mesh.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="EngineSource\Graphics\Primitives.h" />
-    <ClInclude Include="EngineSource\Graphics\Vertex.h" />
-    <ClInclude Include="EngineSource\Shaders\Shader.h" />
-    <ClInclude Include="GameSource\stdafx.h" />
-    <ClInclude Include="EngineSource\lib\std_image.h" />
-    <ClInclude Include="EngineSource\Renderer\Renderer.h" />
-    <ClInclude Include="GameSource\Game.h" />
-    <ClInclude Include="EngineSource\Graphics\Texture.h" />
-    <ClInclude Include="EngineSource\Graphics\Mesh.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="fragment_core.glsl" />
-    <None Include="vertex_core.glsl" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -15,59 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EngineSource\Graphics\Texture.cpp">
+    <ClCompile Include="GameSource\tester\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameSource\Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EngineSource\Renderer\Renderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EngineSource\Shaders\Shader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameSource\main.cpp">
+    <ClCompile Include="GameSource\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameSource\stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EngineSource\Graphics\Mesh.cpp">
+    <ClCompile Include="EngineSource\Console\Console.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EngineSource\Graphics\Texture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameSource\Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineSource\Renderer\Renderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineSource\lib\std_image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineSource\Shaders\Shader.h">
+    <ClInclude Include="GameSource\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameSource\stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EngineSource\Graphics\Mesh.h">
+    <ClInclude Include="EngineSource\Console\Console.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EngineSource\Graphics\Primitives.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineSource\Graphics\Vertex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="vertex_core.glsl" />
-    <None Include="fragment_core.glsl" />
   </ItemGroup>
 </Project>
