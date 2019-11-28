@@ -26,7 +26,10 @@
 #include <sstream>
 #include <fstream>
 #include <list>
+#include <thread>
 
 #include <SOIL2.h>
+
+#include <SDL.h>
 
 #pragma warning(pop) //For /Wall
