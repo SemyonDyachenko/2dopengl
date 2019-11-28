@@ -23,7 +23,7 @@ Display::Display(int width, int height, const char * title)
 	}
 
 	this->isClosed = false;
-	
+
 }
 
 Display::~Display()

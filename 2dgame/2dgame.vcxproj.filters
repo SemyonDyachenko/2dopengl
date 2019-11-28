@@ -27,6 +27,12 @@
     <ClCompile Include="graphics\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="graphics\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -38,9 +44,20 @@
     <ClInclude Include="graphics\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="graphics\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="vertex_shader.glsl" />
-    <None Include="fragment_shader.glsl" />
+    <None Include="shader.vs" />
+    <None Include="shader.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\res\images\tree.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

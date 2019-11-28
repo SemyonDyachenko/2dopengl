@@ -71,8 +71,7 @@ GLuint Shader::createShader(const std::string& text, GLenum shaderType)
 
 	glShaderSource(shader, 1, shaderSourceStrings, shaderSourceStringLength);
 	glCompileShader(shader);
-
-	checkShaderError(shader, GL_COMPILE_STATUS, true, "Error: Shader is invalid");
+	//checkShaderError(shader, GL_COMPILE_STATUS, true, "Error: Shader is invalid");
 	
 	return shader;
 }
@@ -88,6 +87,10 @@ Shader::Shader(const std::string& vertex_file, const std::string& fragment_file)
 		glAttachShader(program, shaders[i]);
 	}
 
+
+	glBindAttribLocation(program, 0, "position");
+	glBindAttribLocation(program, 1, "texCoord");
+	
 
 	glLinkProgram(this->program);
 	checkShaderError(program, GL_LINK_STATUS, true, "Error: Shader filed to link");
